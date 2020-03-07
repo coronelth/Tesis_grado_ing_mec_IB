@@ -1,0 +1,128 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[12pt,papel,twoside]{ibtesis}
+\documentclass[12pt,screen,oneside,pagebackref]{ibtesis}
+%\documentclass[12pt,screen,twoside,pagebackref]{ibtesis}
+%\documentclass[12pt,papel,singlespace,oneside]{ibtesis}
+%\documentclass[12pt,papel,preprint,singlespace,oneside]{ibtesis}
+
+%%%%%%%%%%%%%%%%%%%%% Paquetes extra %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Por conveniencia: aqu\'{\i} puede cargar todos los paquetes y definir los comandos
+% que necesite
+%%%%%%%%%%%%%%%%%%%%% Paquetes extra %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Por conveniencia: aqu\'{\i} puede cargar todos los paquetes y definir los comandos
+% que necesite
+\usepackage[utf8]{inputenc}
+%\usepackage{ibextra}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{braket}
+\usepackage{listings}
+\usepackage{mathrsfs}
+%\usepackage{graphicx}
+\usepackage{subcaption}
+%\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{bbm}
+
+%\newtheorem{theorem}{Teorema}[section]
+%\newtheorem{corollary}{Corollary}[theorem]
+%\newtheorem{lemma}[theorem]{Lema}
+
+\DeclareMathOperator{\Tr}{Tr}
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand\p[2]{\frac{\partial #1}{\partial #2}}
+\renewcommand{\Im}{\mathop{\rm Im}\nolimits}
+\def\e{{\rm e}}
+\hyphenation{con-si-de-ra-mos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% Informacion sobre la tesis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Implementaci\'on de modelos lattice-Boltzmann para flujo multif\'asico con transferencia de calor en unidades de procesamiento gr\'afico}
+\author{Thom\'as Coronel}
+\director{Mgter. Ezequiel Fogliatto}
+\codirector{Ing. Pablo Argañaraz}
+\carrera{Tesis Carrera de Ingenier\'ia Mec\'anica}
+\grado{}
+\laboratorio{Mecánica Computacional - Centro Atómico Bariloche}
+
+\jurado{ Dr. René Cejas Bolecek (Instituto Balseiro - Centro Atómico Bariloche)}
+%\jurado{ Dr. Flavio Colavecchia (Instituto Balseiro - Centro Atómico Bariloche)}
+
+
+%\palabrasclave{Espectroscop\'ia de fotoemisi\'on resuelta en tiempo, respuesta electr\'onica ultrarr\'apida, ``pump and probe'', ARPES, teor\'ia de Floquet, grafeno, aislantes topol\'ogicos.}
+%\keywords{Time resolved photoemission spectroscopy, electronic ultrafast response, pump and probe, Floquet theory, graphene, topological insulators.}
+% Si queremos poner la fecha manualmente:
+\date{Junio de 2020}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\titlepagefalse % Si no quiere compilar la portada descomente esta linea
+%\includeonly{apendices} % Compilar s\'{o}lo estos archivos
+\graphicspath{{figs/}} % Lugar donde encontrar las figuras generales (se puede poner uno en cada cap{\'{\i}}tulo)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% Dentro del environment 'preliminary' va:
+% la dedicatoria, resumen, abstract, indices
+
+
+\begin{preliminary}
+% Escriba su dedicatoria
+
+\dedicatoria{\textit{Inserte aquí su dedicatoria.}}
+
+
+%%% \'{I}ndices %%%%
+
+%\begin{abreviaturas}
+%Abreviaturas
+%\end{abreviaturas}
+
+\tableofcontents                %\'{I}ndice
+
+%\listoffigures                  %Figuras
+
+%\listoftables                   %Tablas
+
+%\include{resumen}
+%\include{abstract}
+
+\end{preliminary}
+
+% Podemos usar cualquiera de los dos comandos: \input o \include para incluir el texto
+%\include{cap0}
+\include{cap1}
+%\include{cap2}
+%\include{cap3}
+%\include{cap4}
+%\include{cap5}
+%\include{cap6}
+%\include{cap7}
+%\include{cap8}
+
+\appendix
+%\include{apend1}
+%\include{apend2}
+%\include{apend3}
+
+\begin{biblio}
+\bibliography{mibib}
+\end{biblio}
+
+
+%\begin{postliminary}
+\begin{seccion}{Agradecimientos}
+%\chapterquote{I knew that good like bad becomes a routine, that the temporary tends to endure, that what is external permeates to the inside, and that the mask, given time, comes to be the face itself.}{Marguerite Yourcenar.}
+%.
+%Agradezco a A,B, y C
+Inserte aquí su agradecimiento.
+
+\end{seccion}
+%\end{postliminary}
+
+\end{document}
+
+\grid
