@@ -1,0 +1,162 @@
+\chapter{Teorema de Reeh-Schlieder y entropía de entrelazamiento}\label{cap3}
+\chapterquote{Admiro la elegancia de su método de cálculo, debe ser muy hermoso cabalgar por esos campos sobre el caballo de las verdaderas matemáticas, mientras que los que son como nosotros tenemos que hacer nuestro camino a pie.}{Albert Einstein en referencia a Tullio Levi-Civita.}
+
+En el marco de la teoría axiomática de campos, usualmente conocida en inglés como \textit{Algebraic Quantum Field Theory}(AQFT) o \textit{Local Quantum Physics} \cite{Haag:1992hx}, como consecuencia inesperada de los axiomas Wightman\cite{Wightman:2016}, H. Reeh y S. Schlieder probaron un teorema que causó revuelo y cuyo resultado se encuentra fuertemente ligado con cuestiones de localización y entrelazamiento \cite{reeh_sch}. Por ejemplo, en una prueba reciente del teorema-a \cite{Casini:2017vbe} que utiliza estados Markovianos (aquellos que saturan a la subaditividad fuerte), como consecuencia del teorema de Reeh-Schlieder, deben considerarse regiones limitadas sólo en el plano nulo del cono de luz.
+
+En términos formales, el teorema predice la verificación de una propiedad por parte del vacío denominada \textit{ciclicidad} y en conjunto con la propiedad de microcausalidad de la teoría relativista implican su \textit{separabilidad}. Consecuentemente, éste posee correlaciones entre cualesquiera dos regiones y por ende, la entropía de entrelazamiento de una región arbitaria resulta no nula. Dentro de este contexto, el objetivo de este capítulo consiste en entender como en el límite no relativista en donde la máxima velocidad de propagación es infinita, dos aspectos a priori contradictorios tienen lugar: la validez del teorema de Reeh-Schlieder, y la nulidad de la entropía de entrelazamiento. 
+
+
+
+\section{Enunciado}
+El objetivo de esta sección es enunciar el teorema de Reeh-Schlieder siguiendo los pasos de \cite{Witten:2018lha}. Para empezar, consideremos algunas definiciones:
+
+\begin{itemize}
+\item $M_D$ el espacio-tiempo de Minkowski de dimensión $D$, es decir $D=d+1$, con signatura $(-+\ldots+)$\footnote{Sólo en este capítulo se considerará esta signatura para la métrica.}.
+\item $\Sigma\subset M_D$ una hipersuperficie completa de tipo espacio (o hipersuperficie de Cauchy). Clásicamente es una región del espacio tiempo en donde se determinan las condiciones inciales de la teoría.
+\item $\mathcal{V}\subset \Sigma$ un conjunto abierto arbitrario de la hipersuperficie.
+\item $\mathcal{U}_{\mathcal{V}} \subset M_D$ un pequeño entorno de $\mathcal{V}$ en el espacio-tiempo.
+\end{itemize}
+Para visualizar los objetos recien definidos podríamos pensar en $D=2$, tomando $\Sigma=\{x\in M_D:\: x^0=0\}$, $\mathcal{V}=\{x\in M_D:\: x^0=0\:\wedge\:|x^1|<L\}$ y $\mathcal{U}_{\mathcal{V}}=\{x\in M_D:\: |x^0|<\epsilon\:\wedge\:|x^1|<L\}$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Reeh_sch_intro.png}
+    \caption{Ejemplo de los conjuntos $\Sigma$, $\mathcal{V}$ y $\mathcal{U}_{\mathcal{V}}$ en $D=2$.}
+    \label{fig:examp}
+ \end{figure}
+
+Además, consideremos:
+\begin{itemize}
+\item $|\Omega\rangle$ el estado de vacío, es decir, el estado de mínima energía.
+\item Si $\phi(x^{\mu})$ representa un campo escalar, los valores de expectación del tipo $\langle \Omega |\phi(x^{\mu}_1)\ldots\phi(x^{\mu}_n)|\Omega \rangle$  no se encuentran bien definidos (poseen divergencias). Por tal motivo, se considerará la funcional $\phi_f$ del campo $\phi$ en términos de una función suave $f$ como: $\phi_f=\int d^Dx\:f(x^u)\phi(x^{\mu})$.
+\item $|\psi_{\vec{f}}\rangle = \phi_{f_1}\phi_{f_2}\ldots\phi_{f_n}|\Omega\rangle$ el estado en el espacio de Hilbert $\mathcal{H}$ con las $f_i$ con soporte en $\mathcal{U}_{\Sigma}$.
+\item $\mathcal{H}_0\subset\mathcal{H}$ el sector de vacío consistente de todos los estados que resultan ser combinación lineal de $|\psi_{\vec{f}}\rangle$, en otras palabras, $\mathcal{H}_0=\text{Span}\{|\psi_{\vec{f}}\rangle\}|_{f_{i\in \mathcal{U}_{\Sigma}}}$.
+\end{itemize}
+
+\textbf{Teorema de Reeh-Schlieder}
+Considerando todas las definiciones, si las $f_i$ están restringidas en un entorno arbitrariamente chico $\mathcal{U}_{\mathcal{V}}\subset M_D$ entonces
+$\mathcal{H}_0=\text{Span}\{|\psi_{\vec{f}}\rangle\}|_{f_{i\in \mathcal{U}_{\mathcal{V}}}}$.\\
+
+En el marco de la Teoría Axiomática de Campos, resulta más riguroso hablar del álgebra de operadores en una región que de los operadores de campos\textit{ per se}. Esto da una formulación de la teoría que no depende particularmente de los campos utilizados en su descripción\cite{Casini:2019qst}. Por ese motivo, introducimos dos nuevas definiciones:
+\begin{itemize}
+\item $\mathcal{V}\subset \Sigma$ un conjunto abierto, entonces $\mathcal{A}_{\mathcal{U}_{\mathcal{V}}}$ se define como el álgebra de operadores con soporte en $\mathcal{U}_{\mathcal{V}}$.
+\item Para $|\psi\rangle \in \mathcal{H}_0$ y $\mathcal{A}_{\mathcal{U}_{\mathcal{V}}}$ un álgebra de operadores, se dice que $\psi$ es un \textit{vector cíclico} de $\mathcal{A}_{\mathcal{U}_{\mathcal{V}}}$ si $\mathcal{H}_0=\text{Span}\{a|\psi\rangle:\:a\in \mathcal{A}_{{\mathcal{U}_{\mathcal{V}}}}\}$.\\
+\end{itemize}
+\textbf{Teorema de Reeh-Schlieder (nuevo enunciado)}  El vacío $|\Omega\rangle$ es un vector cíclico para $\mathcal{A}_{\mathcal{U}_{\mathcal{V}}}$, con $\mathcal{V}\subset \Sigma$ arbitrariamente pequeño.  
+ 
+\section{Demostración}
+\subsection{Caso relativista}
+Para probar el teorema utilizaremos el método de \textit{reductio ad absurdum}. Supongamos que el teorema de Reeh-Schlieder es falso, entonces $\mathcal{H}_0\neq\text{Span}\{|\psi_{\vec{f}}\rangle\}|_{f_{i\in \mathcal{U}_{\mathcal{V}}}}$. Luego, un vector $|\chi\rangle$ distinto de $|\Omega\rangle$ debe existir tal que\footnote{Estamos pensando que para un conjunto abierto arbitrario $U$, $\mathcal{H}_0=U\oplus U^{\perp}$ por ser $\mathcal{H}_0$ separable.} $|\chi\rangle\in\left(\text{Span}\{|\psi_{\vec{f}}\rangle\}|_{f_{i\in \mathcal{U}_{\mathcal{V}}}}\right)^{\perp}$, en otras palabras
+\begin{equation}
+0=\langle \chi|\psi_{\vec{f}}\rangle,
+\end{equation}
+con $f_i$ con soporte en $\mathcal{U}_{\mathcal{V}}$. Esta afirmación es equivalente aún si los campos no son considerados como distribuciones:
+\begin{equation}
+0=\langle \chi|\psi_{\vec{f}}\rangle \:\:\:f_i\text{ con soporte en }\mathcal{U}_{\mathcal{V}} \:\:\: \Leftrightarrow \:\:\:\langle \chi|\phi(x_1)\phi(x_2)\ldots\phi(x_n)|\Omega\rangle=0\:\:\:\:x_i \in \mathcal{U}_{\mathcal{V}}.
+\label{eq:cero_reeh}
+\end{equation}
+\textbf{Lema} Si (\ref{eq:cero_reeh}) es válida $\forall \:x_i \in \mathcal{U}_{\mathcal{V}}$ $\Rightarrow$ es también válida $\forall \:x_i \in M_D$.\\
+
+Si el lema es verdadero entonces $|\chi\rangle$ es ortogonal a todo vector en $\mathcal{H}_0$\footnote{Notemos que eso es equivalente a decir que $|\chi\rangle \in \mathcal{H}^{\perp}_0$. Pero por otro lado, $\mathcal{H}_0=\mathcal{H}_0\oplus \{|\Omega\rangle \}$ con lo cual $\mathcal{H}^{\perp}_0=\{|\Omega\rangle\}$ y $|\chi\rangle =|\Omega\rangle$.} (ya que $\mathcal{H}_0=\text{Span}\{|\psi_{\vec{f}}\rangle\}|_{f_{i\in \mathcal{U}_{\Sigma}}}$ debido a la definición del sector de vacío) implicando que $|\chi\rangle=|\Omega\rangle$, lo cual es un absurdo. Por lo tanto, el teorema de Reeh-Schlieder queda demostrado.\\
+Ahora la tarea difícil, la \textbf{demostración del lema}:
+\begin{itemize}
+\item Definamos $\varphi(x_1,\ldots,x_n)\equiv\langle\chi|\phi(x_1)\ldots \phi(x_n)|\Omega\rangle$. Primero, demostraremos que $\varphi$ continua anulandose si $x_n$ se mueve por fuera de $\mathcal{U}_{\mathcal{V}}$, manteniendo las otras variables en $\mathcal{U}_{\mathcal{V}}$. Segundo, probaremos que sin restricciones en $x_{n-1}$ y en $x_n$, manteniendo $x_1,\ldots,x_{n-2}\in \mathcal{U}_{\mathcal{V}}$, $\varphi$ continua anulandose. Finalmente, procediendo de forma similar variando la coordenada $k$-ésima hasta que $k=n$, concluimos que $\varphi$ es idénticamente nula $\forall\:x_i\in M_D$, demostrando así el lema.  
+
+\item Para demostrar que $\varphi$ se anula cuando sólo se varía $x_n$, consideremos un vector de tipo tiempo que apunta en la dirección futura $R\in M_D$ y un parámetro real $u$, tales que $x_n'=x_n+uR$ (ver (\ref{fig:Raxis})(a)). Si definimos $g$ como
+$\varphi$ evaluada en $x_n'$:
+\begin{equation}
+g(u)=\langle\chi|\phi(x_1)\ldots(x_n+uR)|\Omega\rangle=\langle\chi|\phi(x_1)\ldots e^{i(uR^0H-u\vec{R}\vec{p})}\phi(x_n)e^{-i(uR^0H-u\vec{R}\vec{p})}|\Omega\rangle.
+\end{equation}
+Dado que $P^u|\Omega\rangle=0$,
+\begin{equation}
+g(u)=\langle\chi|\phi(x_1)\ldots e^{i(uR^0H-u\vec{R}\vec{p})}\phi(x_n)|\Omega\rangle.
+\end{equation}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Re_timelike.png}
+    \caption{En concordancia con el ejemplo de (\ref{fig:examp}), en (a) $R\in M_D$ es un vector de tipo tiempo que apunta en la dirección futura que define un rayo $uR$ a través del origen. La función $g(u)$ se anula en el segmento amarillo, ó como está indicado en (b) en el intervalo $I$ de $\text{Re}(u)$. Además, para demostrar el teorema $u\in \mathbb{R}\rightarrow u \in \mathbb{C}$.}
+    \label{fig:Raxis}
+ \end{figure}
+Es importante remarcar que si $u$ es tal que $x_n+uR\in \mathcal{U}_{\mathcal{V}}$, eso implica que $g(u)$ se anula para los correspondientes valores de $u$ en $I$\footnote{El intervalo $I=(-\epsilon,\epsilon)$ consiste de todos los valores de $u$ sobre el rayo que genera $R$ dentro de $\mathcal{U}_{\mathcal{V}}$, tales que $g(u)=0$.}. De ahora en adelante $u\in \mathbb{C}$. Afirmamos que como $|\vec{R}|<R^0$ por ser $R$ de tipo tiempo, entonces $\text{Im}(u|\vec{R}|)<\text{Im}(uR^0)$ para $u$ en el semiplano superior $\mathbb{H}$. Más aún, usando el hecho de que $\vec{R}\vec{p}\leq |\vec{R}||\vec{p}|$ y que $|\vec{p}|\leq H$ (porque $H=+\sqrt{p^2+m^2}$) puede notarse que
+\begin{equation}
+\text{Im}(u|\vec{R}|)<\text{Im}(uR^0)\:\:\: u\in \mathbb{H} \:\:\:\:\Rightarrow \:\:\:\: \left|e^{i(uR^0H-u\vec{R}\vec{p})}\right|<1\:\:\: u\in \mathbb{H}.
+\label{eq:bound}
+\end{equation}
+Entonces, el operador exponencial se encuentra acotado para los $u$ en el semiplano superior y consecuentemente, resulta holomorfo en la misma región.
+\item Hemos aprendido que $g(u)$ es holomorfa en el semiplano superior, continua a medida que $u$ se acerca al eje real por encima, y nula en el segmento $I=(-\epsilon,\epsilon)$ del eje real. Consecuentemente (ver Apéndice \ref{app:schwarz}) $g(u)=0\:\:\forall u\in \mathbb{C}$. En particular, para $u\in \mathbb{R}$ concluimos que $g(u)$ se anula para un rayo en $M_D$ que pasa a través de $x_n$. Continuando con el mismo procedimiento podemos probar que $\varphi$ se anula en el cono de luz pasado y futuro de $x_n$. Es posible repetir el mismo argumento pero eligiendo otro conjunto de $M_D$ en donde $\varphi$ se anule, y comenzar a zig-zagear en $M_D$ hasta cubrirlo enteramente. Como consecuencia, conluimos que $\varphi=0\:\:\forall x_1,\ldots x_{n-1}\in \mathcal{U}_{\mathcal{V}}$, sin la restricción de que $x_n\in \mathcal{U}_{\mathcal{V}}$.
+\item El próximo paso consiste en remover la restricción $x_{n-1}\in \mathcal{U}_{\mathcal{V}}$. Sólo moveremos las últimas dos variable de forma similar al paso anterior $x_{n-1},x_n\rightarrow x_{n-1}+uR,x_n+uR$. Luego, puede verse que
+\begin{equation}
+g(u)=\langle \chi|\phi(x_1)\ldots e^{i(uR^0H-u\vec{R}\vec{p})} \phi(x_{n-1})\phi(x_n)|\Omega \rangle.
+\end{equation}
+De nuevo, concluimos que $g(u)$ se anula en $u\in \mathbb{C}$ y por lo tanto $\varphi=0$ para un desplazamiento arbitrario en $M_D$ de ambos $x_{n-1},x_n$ al mismo tiempo. Dado que somos libres de mover independientemente a $x_n$, concluimos que $\varphi=0\:\:\forall x_1,\ldots x_{n-2}\in \mathcal{U}_{\mathcal{V}}$, sin la restricción $x_{n-1},x_n\in \mathcal{U}_{\mathcal{V}}$. Finalmente, como se mencionó al principio de la demostración del lema, realizamos el mismo procedimiento para las últimas $k$ coordenadas hasta que $k=n$, lo cual completa la demostración.
+\end{itemize}
+$\:\:\:\:\:\:\:\:\:\:\:\square$
+\subsection{Caso no relativista}
+Para extender la demostración al caso no relativista el hamiltoniano $H$ de la teoría debe ser tal de que exista un estado de mínima energía, es decir, un estado de vacío $|\Omega\rangle$. También, debe pedirse que $|\vec{p}|\leq H$ para poder probar la implicación (\ref{eq:bound}). Notemos que esto último trivialmente se satisface en la teoría relativista pues $H=\sqrt{p^2+m^2}>|\vec{p}|$. Sin embargo, si ingenuamente tratásemos de utilizar la relación no relativista usual $H=\frac{p^2}{2m}$, no podríamos concluir que dicha desigualdad se cumple. No obstante, considerando el término dominante $m$ de la relación de dispersión, es decir $H=m+\frac{p^2}{2m}$, es posible probar que $H\geq 2\sqrt{m\cdot \frac{p^2}{2m}}\geq |\vec{p}|$ (en donde hemos utilizado la desigualdad de las medias AM-GM). Notemos que una vez satisfecha la relación $H\geq |\vec{p}|$, la demostración no requiere del uso de la invarianza de Lorentz, más bien de la existencia de traslaciones espacio-temporales, que particularmente se encuentran bien definidas aun en el límite no relativista. Con esto último, hemos extendido la prueba para el caso no relativista y por ende probado la ciclidad del vacío para esta teoría.$\: \square$
+
+Una cuestión a tener en cuenta es que las superficies de Cauchy necesariamente son hipersupeficies con $t$ constante pues en el caso no relativista $c\rightarrow \infty$ y el cono de luz colapsa a una región que abarca todo $M_D$ menos la recta $x^0=0$. Por otro lado, también notamos que la ciclidad del vacío en la teoría no relativista no es posible obtenerla naturalmente sin haber partido \textit{ab initio} de una teoría relativista.
+
+
+\section{Corolarios}
+Como mencionamos al principio del capítulo, la ciclidad del vacío en conjunto con la propiedad de microcausalidad de la teoría relativista implican la denominada separabilidad del vacío. En términos del álgebra de operadores se dice que un vector $|\psi\rangle \in \mathcal{H}_0$ es separador del álgebra de operadores $\mathcal{A}_{\mathcal{U}_{\mathcal{V}}}$ si la condición $a|\psi\rangle=0$ con $a\in \mathcal{A}_{\mathcal{U}_{\mathcal{V}}}$ implica $a=0$.\\
+
+\textbf{Separabilidad del vacío} Si el vacío $|\Omega \rangle$ es cíclico para $\mathcal{A}_{\mathcal{U}_{\mathcal{V}}}$ (resultado que sigue del teorema de Reeh-Schlieder) y $\mathcal{A}_{\mathcal{U}_{\mathcal{V'}}}$ es un álgebra de operadores de una región $\mathcal{U}_{\mathcal{V'}}$ con una separación de tipo espacio respecto de $\mathcal{U}_{\mathcal{V}}$\footnote{Notemos que $\mathcal{U}_{\mathcal{V'}}$ no es el álgebra de operadores conmutante con $\mathcal{U}_{\mathcal{V}}$, denotada como $\mathcal{U}_{\mathcal{V}}'$. En realidad se cumple que $\mathcal{U}_{\mathcal{V'}}\subseteq  \mathcal{U}_{\mathcal{V}}'$, y cuando coinciden dicha condición se denomina dualidad de Haag \cite{Witten:2018lha}. Como la demostración solo usa la conmutatividad de los operadores, la separabilidad del vacío sigue siendo válida aún considerando $\mathcal{U}_{\mathcal{V}}'$. La pérdida de la dualidad está relacionada con la existencia de sectores de superselección\cite{Casini:2019kex}.}, entonces $|\Omega \rangle$ es un vector separador de $\mathcal{A}_{\mathcal{U}_{\mathcal{V'}}}$.\\
+
+Para realizar la demostración consideremos dos regiones con separación de tipo espacio $\mathcal{U}_{\mathcal{V}}$ y $\mathcal{U}_{\mathcal{V'}}$, y un operador $a$ con soporte en $\mathcal{U}_{\mathcal{V}}$. Por la propiedad de microcausalidad se cumple que:
+\begin{equation}
+[\phi(x),a]=0\:\:\:\:\: x \in \mathcal{U}_{\mathcal{V'}}.
+\end{equation}
+Análogamente, considerando un operador $a'$ con soporte en $\mathcal{U}_{\mathcal{V'}}$
+\begin{equation}
+[\phi(x),a']=0\:\:\:\:\: x \in \mathcal{U}_{\mathcal{V}}.
+\end{equation}
+Supongamos además que $a$ es un operador de destrucción del vacío $a|\Omega \rangle=0$. La conmutatividad de $a$ con operadores $\phi(x_i)$ con soporte en $x_i\in \mathcal{U}_{\mathcal{V'}}$ implica que:
+\begin{equation}
+a \phi(x_1) \ldots \phi(x_n)|\Omega \rangle=0\:\:\:\: x_i \in \mathcal{U}_{\mathcal{V'}}.
+\end{equation}
+Pero debido al teorema de Reeh-Schlieder, $\phi(x_1) \ldots \phi(x_n)|\Omega \rangle$ genera todo $\mathcal{H}_0$. Por lo tanto $a=0$ en todo el sector de vacío $\mathcal{H}_0$. $\square$\\
+
+Este resultado de la teoría relativista es sumamente interesante y como ya se mencionó anteriormente, depende fuertemente de la conmutatividad de los operadores (es decir, de la propiedad de microcausalidad de la teoría). Existen otro resultados que también pueden desprenderse de la separabilidad del vacío \cite{Witten:2018lha}: la existencia de estados de energía negativa y de correlaciones en el vacío entre regiones con separación de tipo espacio.
+
+Aunque el teorema de Reeh-Schlieder es válido en la teoría no relativista, los corolarios no siguen siendo necesariamente ciertos pues se pierde la conmutatividad a tiempos distintos. En particular, puede probarse que la entropía de entrelazamiento de una región del vacío con su complemento es siempre nula \cite{Hason:2017flq}. En lo siguiente, introduciremos brevemente la noción de entropía de entrelazamiento y se darán argumentos por la cual la misma es nula en la teoría no relativista.
+
+
+\section{Entropía de entrelazamiento}
+Al estudiar un sistema físico con propiedades inherentes de la mecánica cuántica, resulta imposible separar la noción del “estado actual del sistema” respecto de “nuestro conocimiento del estado del sistema” \cite{Headrick:2019eth}. Ambas pretenciones se encuentran codificadas en un operador $\rho$ que se denomina matriz densidad y posee las siguientes propiedades:
+\begin{equation}
+\rho=\rho^{\dag},\:\:\:\:\:\: \text{Tr}(\rho)=1.
+\end{equation}
+En el formalismo de la matriz densidad, puede calcularse el  valor de exprectación de un observable arbitrario $\mathcal{O}$ como
+\begin{equation}
+\langle \mathcal{O} \rangle_{\rho} = \text{Tr}(\mathcal{O} \rho).
+\label{eq:val_expect}
+\end{equation}
+Motivada por la definición de la entropía de Shannon en el contexto de la teoría de la información, se define la entropía de Von Neumann como
+\begin{equation}
+S(\rho)=-\text{Tr}(\rho \:\text{log}(\rho)).
+\label{eq:EE_form}
+\end{equation}
+En el marco de Teoría Cuántica de Campos la entropía de Von Neumann tiene un rol protagónico cuando un observador sólo puede acceder a un subconjunto del conjunto completo de observables de la teoría \cite{Casini:2009sr}. Dada una región $V$ del espacio, para lidiar con la falta de acceso a los observables en su complemento $\bar{V}$, se define la matriz densidad reducida en $V$ como\footnote{Se considera como matriz densidad del sistema completo a $\rho=|0\rangle \langle 0|$.}
+\begin{equation}
+\rho_V=-\text{Tr}_{\bar{V}}(|0\rangle \langle 0|).
+\label{eq:rho_red}
+\end{equation} 
+Consecuentemente, la \textbf{entropía de entrelazamiento} asociada a la región $V$ se define como la entropía de Von Neumann de $\rho_V$:
+\begin{equation}
+S(V)=-\text{Tr}(\rho_V \text{ log}(\rho_V)).
+\label{ec:def_EE}
+\end{equation}
+\section{Entropía de entrelazamiento de la teoría no relativista}
+Para entender por qué la entropía de entrelazamiento de una región $V$ arbitraria en la teoría no relativista es cero \cite{Hason:2017flq}, pensemos que el espacio de Hilbert $\mathcal{H}$\footnote{No siempre el espacio de Hilbert total $\mathcal{H}$ puede descomponerse de esa manera. Para un campo fermiónico libre si es posible hacerlo, mientras que para teorías de gauge no \cite{Casini:2013rba}.} es tal que
+\begin{equation}
+\mathcal{H}=\mathcal{H}_V \otimes \mathcal{H}_{\bar{V}}.
+\end{equation}
+Como se argumentó en el capítulo anterior, en la teoría no relativista existe una base de estados localizados, por ende, consideraremos una base de estados localizados en $V$ para $\mathcal{H}_V$ y una en $\bar{V}$ para $\mathcal{H}_{\bar{V}}$. Esto último resulta equivalente a decir que el operador número restringido a la región $V$, $N_V$, conmuta con el operado número restringido a la región $\bar{V}$, $N_{\bar{V}}$ respectivamente. Dado que en el vacío no hay partículas $0=N=N_V+N_{\bar{V}}$ y al ser $N_i$ semidefinidos positivos \footnote{En la teoría relativista, la carga conservada que resulta de la simetría $U(1)$ para el campo escalar es $N=N_{\text{partículas}}-N_{\text{antipartículas}}$. En tal caso, $N$ no posee la propiedad de ser semidefinido positivo.}, concluimos que $N_V=N_{\bar{V}}=0$. Esto último, implica la separabilidad del vacío global como el producto de vacíos locales en $V$ y en $\bar{V}$:
+\begin{equation}
+|0\rangle = |0\rangle _{V} \otimes |0\rangle_{\bar{V}}.
+\end{equation}
+Entonces, al trazar sobre $\bar{V}$ resulta que $\rho_V=|0 \rangle \langle 0|_V $ representa un estado puro y en virtud de (\ref{ec:def_EE}), $S(V)=0$.
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "template"
+%%% End:

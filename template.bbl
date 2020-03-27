@@ -1,0 +1,135 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{Wilson:1973jj}
+Wilson, K.~G., Kogut, J.~B.
+\newblock {The Renormalization group and the epsilon expansion}.
+\newblock \emph{Phys. Rept.}, \textbf{12}, 75--200, 1974.
+
+\bibitem{Casini:2009sr}
+Casini, H., Huerta, M.
+\newblock {Entanglement entropy in free quantum field theory}.
+\newblock \emph{J. Phys.}, \textbf{A42}, 504007, 2009.
+
+\bibitem{Zamolodchikov:1986gt}
+Zamolodchikov, A.~B.
+\newblock {Irreversibility of the Flux of the Renormalization Group in a 2D
+  Field Theory}.
+\newblock \emph{JETP Lett.}, \textbf{43}, 730--732, 1986.
+\newblock [Pisma Zh. Eksp. Teor. Fiz.43,565(1986)].
+
+\bibitem{Casini:2012ei}
+Casini, H., Huerta, M.
+\newblock {On the RG running of the entanglement entropy of a circle}.
+\newblock \emph{Phys. Rev.}, \textbf{D85}, 125016, 2012.
+
+\bibitem{Casini:2017vbe}
+Casini, H., Test\'e, E., Torroba, G.
+\newblock {Markov Property of the Conformal Field Theory Vacuum and the a
+  Theorem}.
+\newblock \emph{Phys. Rev. Lett.}, \textbf{118}~(26), 261602, 2017.
+
+\bibitem{Swingle:2014}
+Swingle, B.
+\newblock Entanglement does not generally decrease under renormalization.
+\newblock \emph{Journal of Statistical Mechanics: Theory and Experiment},
+  \textbf{2014}~(10), P10041, Oct 2014.
+\newblock \urlprefix\url{http://dx.doi.org/10.1088/1742-5468/2014/10/P10041}.
+
+\bibitem{Wightman:2016}
+Streater, R.~F., Wightman, A.~S.
+\newblock {PCT. Spin and Statistics, and all that}.
+\newblock Princeton University Press, 1964.
+
+\bibitem{Witten:2018lha}
+Witten, E.
+\newblock {APS Medal for Exceptional Achievement in Research: Invited article
+  on entanglement properties of quantum field theory}.
+\newblock \emph{Rev. Mod. Phys.}, \textbf{90}~(4), 045003, 2018.
+
+\bibitem{Hason:2017flq}
+Hason, I.
+\newblock {Triviality of Entanglement Entropy in the Galilean Vacuum}.
+\newblock \emph{Phys. Lett.}, \textbf{B780}, 149--151, 2018.
+
+\bibitem{peschel2002}
+{Peschel}, I.
+\newblock {LETTER TO THE EDITOR: Calculation of reduced density matrices from
+  correlation functions}.
+\newblock \emph{Journal of Physics A Mathematical General}, \textbf{36},
+  L205--L208, abr. 2003.
+
+\bibitem{Greiner:1996}
+Greiner, W., Reinhardt, J.
+\newblock {Field Quantization}.
+\newblock Springer-Verlag Berlin Heidelberg, 1996.
+
+\bibitem{Tong:2007}
+Tong, D.
+\newblock {Quantum Field Theory}.
+\newblock University of Cambridge. Part III. Mathematical Tripos, 2007.
+
+\bibitem{Gaudin:1960}
+Gaudin, M.
+\newblock Une démonstration simplifiée du théorème de wick en mécanique
+  statistique.
+\newblock \emph{Nuclear Physics}, \textbf{15}, 89 -- 91, 1960.
+\newblock
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/0029558260902856}.
+
+\bibitem{Haag:1962}
+{Haag}, R., {Schroer}, B.
+\newblock {Postulates of Quantum Field Theory}.
+\newblock \emph{Journal of Mathematical Physics}, \textbf{3}~(2), 248--256, Mar
+  1962.
+
+\bibitem{Haag:1992hx}
+Haag, R.
+\newblock {Local quantum physics: Fields, particles, algebras}.
+\newblock 1992.
+
+\bibitem{reeh_sch}
+Reeh, H., Schlieder, S.
+\newblock Bemerkungen zur unitäräquivalenz von lorentzinvarianten feldern.
+\newblock \emph{Il nuovo cimento}, \textbf{22}, 1059--1068, 1961.
+
+\bibitem{Casini:2019qst}
+Casini, H., Grillo, S., Pontello, D.
+\newblock {Relative entropy for coherent states from Araki formula}.
+\newblock \emph{Phys. Rev.}, \textbf{D99}~(12), 125020, 2019.
+
+\bibitem{Casini:2019kex}
+Casini, H., Huerta, M., Magán, J.~M., Pontello, D.
+\newblock {Entanglement entropy and superselection sectors I. Global
+  symmetries}, 2019.
+
+\bibitem{Headrick:2019eth}
+Headrick, M.
+\newblock {Lectures on entanglement entropy in field theory and holography},
+  2019.
+
+\bibitem{Casini:2013rba}
+Casini, H., Huerta, M., Rosabal, J.~A.
+\newblock {Remarks on entanglement entropy for gauge fields}.
+\newblock \emph{Phys. Rev.}, \textbf{D89}~(8), 085012, 2014.
+
+\bibitem{Solis:2016}
+Solis, M.
+\newblock {Métodos de Teoría de campos a densidad finita}.
+\newblock Tesis de Maestría en Ciencias Física. Instituto Balseiro, 2016.
+
+\bibitem{Casini:2005rm}
+Casini, H., Fosco, C.~D., Huerta, M.
+\newblock {Entanglement and alpha entropies for a massive Dirac field in two
+  dimensions}.
+\newblock \emph{J. Stat. Mech.}, \textbf{0507}, P07007, 2005.
+
+\bibitem{Casini_2007}
+Casini, H., Huerta, M.
+\newblock Ac-theorem for entanglement entropy.
+\newblock \emph{Journal of Physics A: Mathematical and Theoretical},
+  \textbf{40}~(25), 7031–7036, Jun 2007.
+\newblock \urlprefix\url{http://dx.doi.org/10.1088/1751-8113/40/25/S57}.
+
+\end{thebibliography}

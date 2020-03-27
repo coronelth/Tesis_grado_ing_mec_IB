@@ -1,0 +1,223 @@
+\chapter{L\'imite no relativista del campo escalar real}\label{cap2}
+\chapterquote{Hay hombres que de su cencia\\
+tienen la cabeza llena;\\
+hay sabios de todas menas,\\
+mas digo, sin ser muy ducho,\\  
+es mejor que aprender mucho \\
+el aprender cosas buenas.}{José Hernández. La vuelta del Martín Fierro.}
+
+En el marco de la Teoría Cuántica de Campos (QFT) un objeto de relevante interés es el campo de Klein-Gordon $\hat{\phi}(x^{\mu})$ que describe el comportamiento de partículas relativistas de \textit{spin} 0. El objetivo de este capítulo radica en entender como partiendo del formalismo relativista de Klein-Gordon se puede obtener una teoría cuántica no relativista, en donde la ecuación de Schr\"{o}dinger domine la evolución temporal. Particularmente se estudiará la noción de estados localizados en momento y en posición, y se concluirá que estos últimos sólo están bien definidos en la teoría no relativista. También se calculará el propagador de la teoría no relativista a partir de las soluciones del campo, y se discutirá la noción de microcausalidad.
+
+\section{Campo escalar real clásico}
+Consideremos un campo “clásico”\footnote{Se lo denomina “clásico” ya que todavía no se han introducido ingredientes inherentes al mundo cuántico.} $\phi(x^{\mu})$, tal que sea una función escalar y real, es decir, $\phi: \mathbb{R}^{d+1}\mapsto \mathbb{R}$ y que satisfaga la ecuación de Klein-Gordon\footnote{Se utilizará la métrica Lorentziana $g_{\mu \nu}=(+-\ldots -)$ con $d+1$ coordenadas espacio-temporales.}
+\begin{equation}
+(\square+m^2)\phi(x^{\mu})=(\partial^{\nu}\partial_{\nu}+m^2)\phi(x^{\mu})=0.
+\label{eq:KG}
+\end{equation}
+Una posible acción $S$ tal que al minimizarla $\delta S=0$ se obtenga (\ref{eq:KG}) resulta
+\begin{equation}
+S = \int dt d^d x\, \frac{1}{2} \left[ (\partial_\mu \phi)^2 - m^2 \phi^2\right]\,.
+\label{eq:action_KG}
+\end{equation}
+La condición en capa de masa establece que la energía $E$ en términos del momento $\vec{p}$ de cada modo de Fourier del campo viene dada por
+\begin{equation}
+\omega_{\vec{p}}\equiv E=\pm \sqrt{p^2+m^2}.
+\end{equation}
+En el límite en el que $p \ll m$,
+\begin{equation}
+\omega _{\vec{p}}= \pm \left(m + \frac{p^2}{2m}+ \mathcal{O}\left(\frac{p^4}{m^3}\right)\right)\,.
+\end{equation}
+La energía posee un orden dominante $\omega_{\vec{p}}\sim \pm m$ más pequeñas correciones entre las cuales aparece la relación usual no relativista $\frac{p^2}{2m}$. Para desacoplar los modos menos energéticos, definimos un campo escalar complejo $\psi:\mathbb{C}^{d+1}\mapsto \mathbb{C}$ tal que\footnote{En realidad, la expresión (\ref{eq:cambio_psi}) tendría que escribirse en términos de $\psi$ y $\psi^{*}$. Sin embargo, al cuantizar el campo $\psi$ y $\psi^{*}$ $\mapsto$ $\hat{\psi}$ y $\hat{\psi^{\dag}}$, con lo cual se optará por usar sistemáticamente $\dag$ en vez de $*$.} 
+\begin{equation}
+\phi \equiv \frac{1}{\sqrt{2m}} \left(e^{-imt} \psi + e^{i m t} \psi^\dag \right).
+\label{eq:cambio_psi}
+\end{equation}
+Al reemplazar en la acción (\ref{eq:action_KG}) y despreciando los términos que oscilan rápidamente debido a los factores $e^{\pm i2mt}$, se obtiene que
+\begin{equation}
+S\approx \int dt d^dx\,\left (\frac{i}{2} (\psi^\dag \partial_t \psi - \partial_t \psi^\dag\,\psi)- \frac{1}{2m}|\partial_i \psi|^2+\frac{1}{2m} |\partial_t \psi|^2 \right)\,.
+\end{equation}
+Como el último término $\frac{1}{2m} |\partial_t \psi|^2$ está suprimido por la masa en comparación con los primeros dos $\frac{i}{2} (\psi^\dag \partial_t \psi - \partial_t \psi^\dag\,\psi)$, también podemos despreciarlo y arribar a una nueva acción aproximada
+\begin{equation}
+S_{\text{NR}} = \int dt d^dx\,\left (\frac{i}{2} (\psi^\dag \partial_t \psi - \partial_t \psi^\dag\,\psi)- \frac{1}{2m}|\partial_i \psi|^2 \right)\,.
+\label{eq:action_sch1}
+\end{equation}
+La acción (\ref{eq:action_sch1}) usualmente se la denomina la acción de Schr\"{o}dinger pues al minimizar acción $\psi$ y $\psi^{\dag}
+$ satisfacen la ecuación homónima y su conjugada en ausencia de potencial
+\begin{equation}
+i\partial_t \psi=-\frac{\nabla^2}{2m}\psi \:\:\:\:\:\: \text{y} \:\:\:\:\: i\partial_t \psi^{\dag}=\frac{\nabla^2}{2m}\psi^{\dag}. 
+\end{equation}
+Integrando por partes y despreciando los términos de borde la acción (\ref{eq:action_sch1}) puede reescribirse como usualmente aparece en la literatura
+\begin{equation}
+S_{\text{NR}}=\int dt d^dx\,\underbrace{\psi^\dag \left(i\partial_t +\frac{\partial_i^2}{2m}   \right)\psi}_{\mathcal{L}_{\text{NR}}} \,  .
+\end{equation}
+La acción no relativista posee una nueva simetría global U(1) dada por $\psi \mapsto e^{-i\alpha}\psi$, con $\alpha$ constante. Esta nueva simetría no existe en la teoría en el UV (ultravioleta), más bien, es una ley emergente de bajas energías dado que todos los términos que la rompen se encuentran suprimidos. Por el teorema de Noether, la corriente conservada $j^{\mu}$ asociada a esta simetría viene dada por
+\begin{equation}
+j^{0}=\frac{\partial \mathcal{L}_{\text{NR}}}{\partial(\partial_{0}\psi)}\frac{\delta \psi }{\delta \alpha}=\psi^{\dag}\psi \:\: \text{,}\:\: j^{i}=\frac{\partial \mathcal{L}_{\text{NR}}}{\partial(\partial_{i}\psi)}\frac{\delta \psi }{\delta \alpha}+\frac{\partial \mathcal{L}_{\text{NR}}}{\partial(\partial_{i}\psi^{\dag})}\frac{\delta \psi^{\dag} }{\delta \alpha}=\frac{i}{2m}(\psi \partial^i \psi^{\dag}- \psi^{\dag}\partial^i \psi).
+\end{equation}
+Mientras que la carga conservada $N$,
+\begin{equation}
+N=\int d^dx \:j^0=\int d^dx \:\psi^{\dag}\psi,
+\end{equation}
+resulta ser el número de partículas. En particular, esta magnitud es semidefinida positiva. Más adelante tendrá un rol fundamental a la hora de argumentar que la entropía de entrelazamiento en la teoría no relativista es cero.\\
+
+Las soluciones de las ecuación de Schr\"{o}dinger en el espacio de momentos resultan ser ondas planas de momento $\vec{p}$ y energía $w_{\vec{p}}=\frac{p^2}{2m}$. Entonces, en el espacio real pueden escribirse como combinación lineal de ellas, pesadas por coeficientes complejos $a_{\vec{p}}$ y $a_{\vec{p}}^{\dag}$
+\begin{equation}
+\psi (\vec{x},t)=\int \frac{d^dp}{(2\pi)^d}\, a_{\vec{p}}\:e^{i(\vec{p}\cdot\vec{x}-w_{\vec{p}}\:t)},\,
+\end{equation}
+\begin{equation}
+\psi ^{\dag}(\vec{x},t)=\int \frac{d^dp}{(2\pi)^d}\, a_{\vec{p}}^{\dag}\:e^{-i(\vec{p}\cdot\vec{x}-w_{\vec{p}}\:t)}.\,
+\end{equation}
+Por otro lado, el momento canónicamente conjugado respecto de $\psi$ es
+\begin{equation}
+\pi(\vec{x},t)=\frac{\partial \mathcal{L}_{\text{NR}}}{\partial(\partial_t \psi)}=i\psi^{\dag}(\vec{x},t).
+\end{equation}
+
+Con esto dicho, ya es posible continuar con miras hacia la cuantización del campo.
+\section{Cuantización canónica}
+Para conciliar los campos clásicos con la mecánica cuántica se puede seguir una prescripción denominada “cuantización canónica” en la cual los campos son elevados a operadores\footnote{Formalmente deberían indicarse tanto $\psi$, $a_{\vec{p}}$ y sus conjugados con un \^{} sobre ellos, aunque omitiremos su escritura de aquí en adelante.} actuando sobre un espacio de Fock y sobre los cuales se imponen reglas de conmutación denominadas canónicas:\footnote{En el caso no relativista también podrían imponerse relaciones de anticonmutación para describir partículas fermiónicas, sin embargo, si se tratasen de imponer en el campo de Klein-Gordon, se violarían principios básicos como por ejemplo microcausalidad.}
+\begin{equation}
+[\psi(\vec{x},t),\psi^{\dag}(\vec{x}\:',t)]=\delta^{(d)}(\vec{x}-\vec{x}\:')\:\:\:\:\:\: \text{y}\:\:\:\:\:\:[\psi(\vec{x},t),\psi(\vec{x}\:',t)]=[\psi^{\dag}(\vec{x},t),\psi^{\dag}(\vec{x}\:',t)]=0.
+\label{eq:conmut_psi_psid}
+\end{equation}
+Puede demostrarse que las relaciones son equivalentes a
+\begin{equation}
+[a_{\vec{p}},a_{\vec{p}\:'}^{\dag}]=(2\pi)^d\delta^{(d)}(\vec{p}-\vec{p}\:')\:\:\:\:\:\:\text{y}\:\:\:\:\:\:[a_{\vec{p}},a_{\vec{p}\:'}]=[a_{\vec{p}}^{\dag},a_{\vec{p}\:'}^{\dag}]=0.
+\end{equation}
+En el formalismo del espacio de Fock se define el vacío $|0\rangle$ como el estado sin partículas tal que $\langle 0|0\rangle=1$ y $a_{\vec{p}}|0\rangle=0$ para todo $\vec{p}$. A continuación, veremos otros elementos que permitan interpretar a los estados del tipo $a_{\vec{p}}^{\dag}|0\rangle$.
+
+El hamiltoniano $H$ puede escribirse en términos de la densidad hamiltoniana $\mathcal{H}=\pi\partial_t\psi-\mathcal{L}$ como
+\begin{equation}
+H=\int d^dx \, \mathcal{H} = \int \frac{d^dp}{(2\pi)^d}\, \omega_{\vec{p}}\:a_{\vec{p}}^{
+\dag}\: a_{\vec{p}}.\,
+\end{equation}
+Como la densidad lagrangiana es invariante ante traslaciones espaciales, el momento $\vec{P}$ resulta ser una carga conservada (que en este formalismo también resulta ser un operador de campo),
+\begin{equation}
+(\vec{P})^i=\int d^dx \,T^{0i} \,=\int d^dx \,\pi\partial^i \psi \,=\int \frac{d^dp}{(2\pi)^d} \,(\vec{p})^i\:a_{p}^{\dag}a_{\vec{p}}\:, \,
+\end{equation}
+siendo $T^{\mu \nu}$ el tensor energía-impulso. Si definimos el vector $|\vec{p}\rangle$ como
+\begin{equation}
+|\vec{p}\rangle \equiv a_{\vec{p}}^{\dag}|0\rangle,
+\end{equation}
+puede demostrarse utilizando las expresiones de $H$ y $\vec{P}$ que: $H|\vec{p}\rangle = w_{\vec{p}} |\vec{p}\rangle $ y $\vec{P}|\vec{p}\rangle = \vec{p} |\vec{p}\rangle $. Esto último permite interpretar a los vectores $|\vec{p}\rangle $ como “partículas” de momento $\vec{p}$ y energía $w_{\vec{p}}$. Por este motivo se suele llamar a $a_{p}^{\dag}$ operador de creación y consecuentemente a $a_{\vec{p}}$ operador de destrucción. Sin embargo, estas “partículas” no se encuentran localizadas en el espacio. Por otro lado, sí existen vectores que se encuentran localizados en el espacio y que resultan ser combinación lineal de $|\vec{p}\rangle$:
+\begin{equation}
+|\vec{x}\rangle \equiv \psi^{\dag}(\vec{x},0)|0\rangle=\int \frac{d^dp}{(2\pi)^d} \,e^{-i\vec{p}\:\vec{x}}|\vec{p}\rangle \,.
+\label{eq:local_nr}
+\end{equation} 
+Para demostrar esa última afirmación, es posible definir un operador posición $\vec{X}$ al igual que en mecánica cuántica no relativista
+\begin{equation}
+\vec{X}=\int d^dx \,\vec{x}\:\psi(\vec{x})^{\dag}\psi(\vec{x}) , \,
+\end{equation} 
+y utilizando (\ref{eq:conmut_psi_psid}) puede verse que $\vec{X}|\vec{x}\rangle=\vec{x}|\vec{x}\rangle$. Éstas partículas se encuentran localizadas en el espacio y al igual que $|\vec{p}\rangle$, satisfacen la relación de completitud para estados de una sola partícula
+\begin{equation}
+(\textbf{1})_1=\int d^dx\,|\vec{x}\rangle \langle\vec{x}| \,=\int \frac{d^dp}{(2\pi)^d}\, |\vec{p}\rangle \langle \vec{p}|,\,
+\end{equation}
+y están normalizados de forma que
+\begin{equation}
+\langle \vec{x}|\vec{x}\:'\rangle=\delta^{(d)}(\vec{x}-\vec{x}\:')\:\:\:\:\:\: \text{y} \:\:\:\:\:\:\langle \vec{p}|\vec{p}\:'\rangle=(2\pi)^d\delta^{(d)}(\vec{p}-\vec{p}\:').
+\label{eq:norm_x}
+\end{equation}
+Además, la interpretación acerca de la localización es consistente con el cálculo
+\begin{equation}
+\langle \vec{x}|\vec{p} \rangle=e^{i\vec{p}\:\vec{x}},
+\end{equation}
+cuyo resultado se encuentra en el marco de la mecánica cuántica no relativista al utilizar la representación posición/momento de la función de onda.\\
+
+El esquema de la existencia de estados localizados en posición se desvance en la teoría relativista. Si se hubiese seguido el mismo procedimiento de cuantización canónica, las soluciones para el campo de Klein Gordon (\ref{eq:action_KG}) $\phi_{KG}(\vec{x},t)$ hubiesen resultado\cite{Greiner:1996}:
+\begin{equation}
+\phi_{KG} (\vec{x},t)=\int \frac{d^dp}{(2\pi)^d}\,\frac{1}{\sqrt{2\tilde{\omega}_{\vec{p}}}} \left(\tilde{a}_{\vec{p}}\:e^{i(\vec{p}\cdot\vec{x}-\tilde{\omega}_{\vec{p}}\:t)}+\tilde{a}_{\vec{p}}^{\dag}\:e^{-i(\vec{p}\cdot\vec{x}-\tilde{\omega}_{\vec{p}}\:t)}\right)=\phi^{+}_{KG} (\vec{x},t)+\phi^{-}_{KG} (\vec{x},t),\,
+\end{equation}
+donde $\tilde{\omega}_{\vec{p}}\equiv \sqrt{\vec{p}^2+m^2}$. El factor de normalización que depende de la energía es tal que la medida de integración en el espacio de momentos $\int \frac{d^dp}{(2\pi)^d}\,\frac{1}{2\tilde{\omega}_{\vec{p}}}$ sea Lorentz-invariante \cite{Tong:2007}. Entonces, podríamos proceder de manera similar al caso no realtivista y definir\footnote{$\phi^+_{KG}$ indica la parte de $\phi_{KG}$ que contiene operadores de creación. También se podría haber definido $|\vec{x}\rangle_{KG}$ actuando con $(\phi^{\dag})^{+}_{KG}$ sobre $|0\rangle$.}
+\begin{equation}
+|\vec{x} \rangle_{\text{KG}}\equiv \phi^{-}_{KG}(\vec{x},0)|0\rangle=\int \frac{d^dp}{(2\pi)^d} \frac{1}{\sqrt{2\tilde{\omega}_{\vec{p}}}}\,e^{-i\vec{p}\:\vec{x}}|\vec{p}\rangle_{KG} ,\,
+\end{equation}
+donde $|\vec{p}\rangle_{KG} = \tilde{a}_{\vec{p}}^{\dag}|0\rangle$. Notamos que $\tilde{\omega}_{\vec{p}}\approx \sqrt{2m}$ cuando $|\vec{p}| \ll m$, con lo cual en dicho límite se recupera la expresión (\ref{eq:local_nr}) absorbiendo la constante en una redefinición de los operadores de creación/destrucción. Sin embargo, ocurre que la normalización de $|\vec{x}\rangle_{KG}$ no coincide con (\ref{eq:norm_x}). Más bien puede demostrarse que
+\begin{equation}
+\begin{split}
+\langle \vec{x}|\vec{y} \rangle_{KG}=\int \frac{d^dp}{(2\pi)^d} \frac{e^{i\vec{p}(\vec{y}-\vec{y})}}{2\sqrt{p^2+m^2}}\,&\stackrel{d=3}{=}\frac{m}{2\pi^2 |\vec{x}-\vec{y}|}\int_0^{\infty} dt \sinh(t)\sin(m|\vec{x}-\vec{y}|\sinh(t))\\
+&= \frac{mK_1(m|\vec{x}-\vec{y}|)}{2\pi^2|\vec{x}-\vec{y}|},
+\end{split}
+\end{equation}
+siendo $K_1$ la función modificada de Bessel de segunda especie y de primer orden\footnote{Puede consultarse la \textit{Digital Library of Mathematical Functions} del NIST. Su página web es: \url{https://dlmf.nist.gov/} .} (o función de MacDonald), que tiene la particularidad de decaer exponencialmente con la distancia, es decir:
+\begin{equation}
+\langle \vec{x}|\vec{y} \rangle \longrightarrow \left(\frac{m^3}{2\pi|\vec{x}-\vec{y}|}\right)^{1/2} e^{-m|\vec{x}-\vec{y}|}\:\:\: \:\: \text{si}\:\:\: m|\vec{x}-\vec{y}| \gg 1.
+\end{equation}
+En vez de anularse para $\vec{x} \neq \vec{y}$ como en el caso no relativista, decae exponencialmente con la inversa de la longitud de onda de Compton $\frac{1}{m}$, o en unidades no naturales $\lambda_c=\frac{h}{mc}\approx 0,024 \: \textup{\r{A}}$. Por tanto, la teoría de Klein-Gordon introduce una escala natural a partir de la cual es factible hablar de la noción de localización de las partículas.
+\section{Estados de muchas partículas}
+Hasta el momento sólo se definieron estados $|\vec{p}\rangle$ y $|\vec{x}\rangle$ que fueron interpretados como estados de una sola partícula localizada en $\vec{p}$ y en $\vec{x}$ respectivamente. De manera muy natural, podría extenderse la definición para un número más grande de partículas. Por ejemplo, en el espacio de momentos se define   el vector $|\vec{p}_1\ldots \vec{p}_n\rangle$ tal que
+\begin{equation}
+|\vec{p}_1\ldots \vec{p}_n\rangle \propto a^{\dag}_{\vec{p}_{1}}
+\ldots a^{\dag}_{\vec{p}_n}|0\rangle.
+\end{equation}
+La proporcionalidad se debe a que al haber cuantizado con reglas de conmutación, la estadística para un sistema de muchas partículas resulta bosónica, por lo cual, prodría ocurrir que hubiese más de una partícula con el mismo momento. Por otro lado, también se extiende la noción de un estado de muchas partículas localizadas en el espacio como
+\begin{equation}
+|\vec{x}_1 \ldots \vec{x}_n \rangle =\int \frac{d^dp_1}{(2\pi)^d}\ldots \frac{d^dp_n}{(2\pi)^d}\: e^{-i( \vec{p}_1 \:\vec{x}_1+\ldots+\vec{p}_n \:\vec{x}_n)} |\vec{p}_1\ldots \vec{p}_n\rangle .
+\end{equation}
+La existencia de una base de estados $|\vec{x}_1 \ldots \vec{x}_n \rangle$ en la teoría no relativista será una pieza clave para justificar más adelante que la entropía de entrelazamiento es nula en dicho límite.
+
+\section{Cálculo del propagador y microcausalidad}
+Un objeto central en cualquier teoría de campos es el propagador (o función de correlación de dos puntos o función de Green). Desde el punto de vista de la teoría axiomática de Wightman \cite{Wightman:2016}, el conocimiento de los correladores resultaría suficiente para describir completamente a la teoría. En las teorías libres, apelando al teorema de Wick\cite{Gaudin:1960}, puede demostrarse que cualquier función de correlación de $2n$ campos\footnote{En el caso del campo escalar, tiene que haber $n$ operadores de creación y $n$ operadores de destrucción para que el correlador no sea idénticamente nulo.} puede calcularse en términos de la función de correlación de dos puntos. En tiempo real, existen distintas prescripciones, todas extensiones analíticas del propagador en tiempo euclídeo. Sin embargo, sólo calcularemos el propagador a tiempo real conocido como propagador de Feynman\footnote{Como se verá en (\ref{eq:prop_feyn}) el mismo coincide con el propagador retardado en la teoría no relativista.} $G_F$, que se define como
+\begin{equation}
+\begin{split}
+G_F(\vec{x}\:',t\:',\vec{x},t)&=\langle T \{\psi(\vec{x}\:',t\:')\psi^{\dag}(\vec{x},t)\}\rangle\\
+&=\Theta (t\:'-t)\langle \psi(\vec{x}\:',t\:')\psi^{\dag}(\vec{x},t)\rangle + \Theta (t-t\:')\langle \psi^{\dag}(\vec{x},t)\psi(\vec{x}\:',t\:')\rangle \\
+&=\Theta (t\:'-t)\langle \psi(\vec{x}\:',t\:')\psi^{\dag}(\vec{x},t)\rangle \\
+&=G_R(\vec{x}\:',t\:',\vec{x},t).
+\end{split}
+\label{eq:prop_feyn}
+\end{equation}
+En la última igualdad se utilizaron las soluciones para $\psi$ y $\psi^{\dag}$ en términos de $a_{\vec{p}}$ y $a^{\dag}_{\vec{p}}$, y el hecho de que $\langle 0| a_{\vec{p}}a^{\dag}_{\vec{p}\:'}|0\rangle=\delta_{\vec{p},\vec{p}\:'}$ para demostrar la nulidad del último término. Explícitamente, el propagador se obtiene de la resolución de la integral:
+\begin{equation}
+G_F=\Theta (t\:'-t)\int \frac{d^dp}{(2\pi)^d}\,e^{i[\vec{p}\:(\vec{x}\:'-\vec{x})+\frac{\vec{p}^2}{2m}(t-t\:')]}.\,
+\end{equation}
+Completando cuadrados y sacando fuera de la integral el término independiente de $\vec{p}$,
+\begin{equation}
+G_F=\Theta (t\:'-t)e^{im\frac{(\vec{x}\:'-\vec{x})^2}{(t\:'-t)}}\int \frac{d^dp}{(2\pi)^d}\,e^{i\frac{(t-t\:')}{2m}[\vec{p}+m\frac{(\vec{x}\:'-\vec{x})}{t-t\:'}]^2}.\,
+\end{equation}
+Haciendo un cambio de variables por $\vec{y}:=\vec{p}+m\frac{(\vec{x}\:'-\vec{x})}{t-t\:'}$ ,
+\begin{equation}
+G_F=\Theta (t\:'-t)e^{im\frac{(\vec{x}\:'-\vec{x})^2}{2(t\:'-t)}}\int \frac{d^dy}{(2\pi)^d}\,e^{i\frac{(t-t\:')}{2m}\vec{y}^2}\,=\Theta (t\:'-t)e^{im\frac{(\vec{x}\:'-\vec{x})^2}{2(t\:'-t)}}\left(\frac{1}{2\pi}\int dy\, e^{-i\frac{(t\:'-t)}{2m}y^2} \, \right)^d.
+\end{equation}
+Utilizando la integral de Fresnel para $\alpha>0$, es decir, para $t\:'>t$.
+\begin{equation}
+\int dy\, e^{-i\alpha y^2} \,=\sqrt{\frac{\pi}{2\alpha}}(1-i),
+\end{equation}
+el propagador de Feynman en el límite no relativista resulta
+\begin{equation}
+G_F(\vec{x}\:',t\:',\vec{x},t)=\Theta (t\:'-t)\left(\frac{m}{2\pi i (t\:'-t)}\right)^{d/2}e^{i\frac{m(\vec{x}\:'-\vec{x})^2}{2(t\:'-t)}}.
+\end{equation}
+Para $t\rightarrow t\:'$ el límite puede calcularse introduciendo un camio de variable $\tau=i(t\:'-t)$
+\begin{equation}
+\lim_{\tau \rightarrow 0^{+}}\:G_F=\prod_{j=1}^{d}\left(\sqrt{\frac{m}{2\pi \tau}}e^{-\frac{m(x_j'-x_j)^2}{2\tau}}\right)=\delta^{(d)}(\vec{x}\:'-\vec{x}),
+\end{equation}
+resultado que concuerda con el valor de expectación en el vacío de (\ref{eq:conmut_psi_psid}), es decir, con $\langle 0|[\psi(\vec{x}\:',t\:'),\psi^{\dag}(\vec{x},t)]|0 \rangle=\delta^{(d)}(\vec{x}\:'-\vec{x})$.\\
+
+El principio de microcausalidad establece que dos eventos con separación de tipo espacio, es decir, que satisfacen $(x-x\:')^2<0$, no ejercen ninguna influencia el uno sobre el otro (siendo $x=(\vec{x},t)$ y $x\:'=(\vec{x}\:',t\:')$). En general, cualquier observable de la teoría se puede escribir como \cite{Greiner:1996}
+\begin{equation}
+\hat{O}(x)=\hat{\psi}^{\dag}(x)O(x)\hat{\psi}(x),
+\end{equation}
+donde $O(x)$ es una función compleja o un operador diferencial. Por otro lado, puede demostrarse que
+\begin{equation}
+[\hat{O}(x),\hat{O}(x\:')]=O(x)O(x\:')\left(\hat{\psi}^{\dag}(x)\hat{\psi}(x\:')+\hat{\psi}^{\dag}(x\:')\hat{\psi}(x)\right)\Delta(x-x\:'),
+\end{equation}
+siendo $\Delta$ la función de Pauli-Jordan
+\begin{equation}
+\Delta(x\:'-x)=[ \psi(x\:'),\psi^{\dag}(x)].
+\end{equation}
+La propiedad de microcausalidad formalmente se enuncia\footnote{En \cite{Haag:1962} la conmutatividad está manifestada expresamente en el Postulado 7. Sin embargo, como en la teoría no relativista es imposible satisfacerla, los autores introducen el Postulado 8 que intuitivamente establece la existencia de una ecuación de campo que determina su evolución a todo tiempo dado el campo a un tiempo inicial.} como una relación de conmutación para eventos con separación de tipo espacio.
+\begin{equation}
+[\hat{O}(x),\hat{O}(x\:')]=0\:\:\:\:\:\:\text{si}\:\:\:\:\:\:(x-x\:')^2<0,
+\end{equation}
+y en términos de la función de Pauli-Jordan
+\begin{equation}
+\Delta(x-x\:')=0\:\:\:\:\:\:\text{si}\:\:\:\:\:\:(x-x\:')^2<0.
+\end{equation}
+En la teoría no relativista, también puede demostrarse que
+\begin{equation}
+G_F(\vec{x}\:',t\:',\vec{x},t)=\Theta (t\:'-t)\langle \Delta(x\:'-x)\rangle.
+\label{eq:feyn_delta}
+\end{equation}
+Como $G_F\neq 0$ para $t\neq t'$ el principio de microcausalidad se desvanece pues la máxima velocidad de propagación es infinita $c\rightarrow \infty$ y los únicos eventos que no está influenciados causalmente son aquellos que posean el mismo $t$. Por otro lado, la expresión (\ref{eq:feyn_delta}) sólo es válidad en el límite no relativista. Para el campo de Klein-Gordon ocurre que si bien $G_F^{KG}$ nunca se anula, la función $\Delta$ sí lo hace para eventos de tipo espacio, respetando así al principio de microcausalidad.
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "template"
+%%% End:

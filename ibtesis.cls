@@ -119,9 +119,9 @@
 % Set default values
 \author{Nombre del autor}
 \director{Agregar Nombre del director}
-\carrera{Tesis Carrera de Ingeniería Mecánica}
+\carrera{Tesis Carrera de Doctorado en F\'{\i}sica}
 %\grado{Doctorando o Maestrando}
-\laboratorio{Mecánica Computacional}
+\laboratorio{Part\'iculas y Campos}
 \palabrasclave{palabras, clave, espa\~{n}ol}
 \keywords{key, words, English}
 
@@ -221,8 +221,8 @@
 % All other pages
 \fancyhead[LO]{}
 \fancyfoot[L,R,C]{}
-\fancyhead[L,RO]{\bfseries\thepage}
-\fancyhead[R]{\sffamily\bfseries\nouppercase{\leftmark}}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[RE]{\sffamily\bfseries\nouppercase{\leftmark}}
 \fancyhead[LO]{\sffamily\nouppercase{\rightmark}}
 \renewcommand{\headrulewidth}{1pt}
 

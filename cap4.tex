@@ -1,0 +1,209 @@
+\chapter{Entropía de entrelazamiento a densidad finita}\label{cap4}
+\chapterquote{Un segundo bastó para separar su cabeza del cuerpo, pasarán siglos para que una cabeza como aquella vuelva a ser llevada sobre los hombros de un hombre de ciencias}{J.L. Lagrange sobre la ejecución de A. Lavoiser (1794).}
+
+La entropía de entrelazamiento es un objeto que permite medir las correlaciones de una región del espacio $V$ en una teoría, con su complemento $\bar{V}$. En el presente capítulo consideraremos un campo de Dirac libre discretizado en 1+1 dimensiones espacio-temporales y estudiaremos la entropía de entrelazamiento siguiendo los pasos de \cite{Casini:2009sr}. En particular, introduciremos una densidad no trivial de materia, es decir, en el marco del formalismo gran canónico, un potencial químico $\mu$ no nulo. Por el momento, se han hecho cálculos analíticos considerando la teoría en el discreto y se ha procedido a una etapa de programación para la obtención de las curvas de entropía de entrelazamiento. Queda aun el trabajo de que las curvas de $S(V)$ representen la entropía de entrelazamiento en el continuo de la teoría. 
+
+\section{Densidad de materia no nula}
+Consideremos un campo fermiónico libre $\psi$ de masa $m$ en $d+1$ dimensiones espacio-temporales. Su densidad lagrangiana resulta\footnote{Se utilizará la métrica Lorentziana $g_{\mu \nu}=(+-\ldots -)$ con $d+1$ coordenadas espacio-temporales.}
+\begin{equation}
+\mathcal{L}=\bar{\psi}(i\gamma^{\nu}\partial_{\nu}-m)\psi.
+\label{eq:lag_libre}
+\end{equation}
+Incluir una densidad de materia no nula es equivalente a exigir que el valor de expectación de una carga conservada sea distinto del trivial \cite{Solis:2016}. Para el caso del campo fermiónico, la simetría global $U(1)$ dada por $\psi \mapsto e^{-i\alpha}\psi$ con $\alpha$ constante, por el teorema de Noether implica la existencia de una corriente conservada $j^{\mu}$ dada por:
+\begin{equation}
+j^{\mu}=\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\psi)}\frac{\delta \psi }{\delta \alpha}=\bar{\psi}\gamma ^{\mu}\psi.
+\end{equation}
+Donde la correspondiente carga conservada $N$ viene dada por:
+\begin{equation}
+N=\int d^dx\:j^0=\int d^dx \:\psi^{\dag}\psi.
+\end{equation}
+En este caso $N$ representa el número de partículas.\\
+
+La descripción de un sistema físico que está en contacto con un reservorio que permite el intercambio de energía y de partículas en donde la densidad media de energía y de materia (densidad media de partículas) son constantes puede realizarse en el marco de la descripción gran canónica. En la misma, el reservorio posee una temperatura $T$ y un potencial químico $\mu$ dados. En este formalismo, la densidad hamiltoniana se ve modificada:
+\begin{equation}
+\mathcal{H}\mapsto \mathcal{H}'=\mathcal{H}-\mu N.
+\end{equation}
+Con lo cual la densidad lagrangiana (\ref{eq:lag_libre}) con un potencial químico arbitrario $\mu$ resulta
+\begin{equation}
+\mathcal{L}=\bar{\psi}(i\gamma^{\nu}\partial_{\nu}-m)\psi+\mu \psi^{\dag}\psi =\bar{\psi}\left((p_0+\mu)\gamma^0+p_i\gamma^i-m\right)\psi.
+\label{eq:ec_dirac}
+\end{equation}
+Redefiniendo $\tilde{p_0}=p_0+\mu$, la relación de dispersión se modifica como
+\begin{equation}
+p_0=\tilde{p_0}-\mu=-\mu \pm \sqrt{p^2+m^2}.
+\end{equation}
+En función del signo de $p_0$ los estados en el espacio de momentos $\vec{p}$ quedan separados por la denominada \textit{superficie de Fermi} que consiste de aquellos estados con momento $\vec{p}$ tales que $p_0(\vec{p})=0$, es decir, aquellos estados con momento $|\vec{p}|=\sqrt{\mu^2-m^2}$.
+\section{Entropía de entrelazamiento de un sistema fermiónico discretizado \label{sec:EE_lattice_f}} 
+Los primeros cálculos de entropía de entrelazamiento se abordaron con una técnica que se denomina de \textit{tiempo real}\footnote{En contraste con la técnica que se denominda de \textit{tiempo euclídeo}.}, en la cual se parte de una versión discretizada de la teoría de campos y eventualmente se toma el límite al continuo \cite{Casini:2009sr}. El objetivo de esta técnica consiste en calcular la matriz densidad correspondiente al estado de vacío global utilizando correladores. Si $\rho_V$ resulta la matriz reducida (\ref{eq:rho_red}) de una región $V$, por cada operador $\mathcal{O}_V$ localizado dentro de $V$, los valores de expectación en el vacío $\langle \mathcal{O}_V \rangle$, de forma similar a  (\ref{eq:val_expect}), deben ser tales que \cite{Casini:2009sr}\cite{Casini:2005rm}
+\begin{equation}
+\langle \mathcal{O}_V \rangle = \text{Tr}(\rho_V\mathcal{O}_V).
+\end{equation}
+Al considerar una teoría discretrizada de fermiones libres, su densidad hamiltoniana $\mathcal{H}$ puede escribirse en términos de operadores de creación y destrucción localizados en cada sitio
+\begin{equation}
+\mathcal{H}=\sum_{i,j}H_{ij}c_i^{\dag}c_j,
+\label{ec:ham_dic}
+\end{equation}
+tales que $\lbrace c_i,c_j^{\dag}\rbrace=\delta_{ij}$, al igual que en un modelo de tight-binding. Al ser una teoría libre (cuadrática o gaussiana), y en virtud del teorema de Wick \cite{peschel2002}, la matriz densidad reducida $\rho_V$ resulta
+\begin{equation}
+\rho_V=\frac{e^{-\mathcal{K}}}{\text{Tr}(e^{-\mathcal{K}})}=\frac{e^{-\sum_{i,j\in V}K_{ij}c_i^{\dag}c_j}}{\text{Tr}(e^{-\mathcal{K}})},
+\end{equation}
+donde $\mathcal{K}$ es el denominado \textit{hamiltoniano modular}. De particular interés resulta el correlador
+\begin{equation}
+C_{ij}=\langle c_i^{\dag}c_j \rangle ,
+\end{equation}
+ya que el hamiltoniano modular podrá escribirse en términos de $C$. Al realizar una transformación unitaria\footnote{Para mantener invariante las relaciones de anticonmutación, es decir, para que $\lbrace a_k,a_l^{\dag}\rbrace =\delta_{kl}$ .} tal que diagonalice al hamiltoniano modular
+\begin{equation}
+c_i=\sum_k \phi_k(i)a_k,
+\end{equation}
+siendo $\lbrace a_i \rbrace$ un nuevo conjunto de operadores. Puede demostrarse que
+\begin{equation}
+C_{ij}  =\sum_k \phi^{*}_k(i)\phi_k(j)\frac{1}{e^{ \epsilon_k}+1},
+\label{eq:cor_pes}
+\end{equation}
+y que 
+\begin{equation}
+K_{ij}=\sum_k \phi^{*}_k(i)\phi_k(j)\epsilon_k,
+\end{equation}
+donde $\epsilon_k$ corresponde a la energía del $k$-ésimo estado del hamiltoniano modular. Estas dos últimas expresiones permiten escribir al hamiltoniano modular como
+\begin{equation}
+\mathcal{K}=-\log(C^{-1}+1).
+\end{equation}
+Entonces la matriz densidad reducida $\rho_V$ queda exclusivamente definida a través de la matriz de correlación de dos puntos $C$ restringida en $V$. Por último, la entropía de entrelazamiento $S(V)$ puede calcularse según (\ref{eq:EE_form}):
+\begin{equation}
+\begin{split}
+S(V)=-\sum_k \text{Tr}(\rho_k \log(\rho_k)) & =\sum_k \left(\frac{\epsilon_k}{1+e^{ \epsilon_k}}+\log(1+e^{- \epsilon_k})\right) \\
+& = -\text{Tr}\left(C\log(C)+(1-C)\log(1-C)\right)
+ \\
+& = \sum_j \left(\nu_j \log(\nu_j)+(1-\nu_j)\log(1-\nu_j) \right),
+\end{split}
+\label{eq:EE_matC}
+\end{equation}
+donde $\nu_j$ indican los autovalores de $C$ restringidos a una región $V$.\\
+
+En conclusión, por tratarse de una teoría cuadrática (libre), tanto la matriz densidad reducida $\rho_V$ como la entropía de entrelazamiento $S(V)$ dependen solamente de la matriz de correlación de dos puntos restringida en $V$. Entonces, la tarea de computar $S(V)$ se reduce al cálculo de los autovalores de la función de correlación de dos puntos restringida a $V$.
+\section{Entropía de entrelazamiento del campo de Dirac en 1+1}
+
+Consideremos como nuestro sistema a un campo fermiónico libre $\psi$ en contacto con un baño térmico a temperatura $T=0$ y potencial químico $\mu$. En vez de considerar la densidad lagrangiana (\ref{eq:ec_dirac}), consideraremos la versión simetrizada que posee la particularidad de ser hermítica\cite{Greiner:1996}
+\begin{equation}
+\mathcal{L}=\mathcal{L}^{\dag}=\frac{i}{2}\bar{\psi}\gamma^{\nu}\stackrel{\leftrightarrow}{\partial_{\nu}}\psi-m\bar{\psi}\psi +\mu \psi^{\dag}\psi ,
+\end{equation}
+con lo cual
+\begin{equation}
+\mathcal{H}(\psi,\psi^{\dag})=-\frac{i}{2}\bar{\psi}\gamma^{j}\stackrel{\leftrightarrow}{\partial_{j}}\psi+m\bar{\psi}\psi -\mu \psi^{\dag}\psi ,
+\end{equation}
+donde el operador $\stackrel{\leftrightarrow}{\partial}$ es tal que $A\stackrel{\leftrightarrow}{\partial}B=A(\partial B) - B (\partial A)$. Trabajaremos en 1+1 dimensiones espacio-temporales, y discretizaremos la coordenada espacial con un espaciado $\epsilon$  de forma tal de escribir el hamiltoniano de la teoría como (\ref{ec:ham_dic}). Para pasar la teoría al discreto efectuamos:
+\begin{equation}
+\psi \mapsto \psi_n,\:\:\:\:\:\psi^{\dag} \mapsto \psi^{\dag}_n,\:\:\:\:\: \partial \psi \mapsto \frac{\psi_{n+1}-\psi_n}{\epsilon}\:\:\:\: \text{y} \:\:\:\: \psi^{\dag }\mapsto \frac{\psi^{\dag}_{n+1}-\psi^{\dag}_n}{\epsilon}.
+\end{equation}
+Luego, considerando el caso particular con $\epsilon=1$, resulta que
+\begin{equation}
+\mathcal{H}=\sum_n\left(-\frac{i}{2}(\psi_n^{\dag}\gamma^0\gamma^1(\psi_{n+1}-\psi_n)-\text{c.c.})+m\psi_n^{\dag}\gamma^0\psi_n-\mu \psi_n^{\dag}\psi_n\right),
+\end{equation}
+donde $\lbrace\psi_i,\psi^{\dag}_j\rbrace=\delta_{ij}$. Dado que el sistema posee invarianza traslacional, resulta conveniente  realizar una transformada de Fourier discreta del campo en cada sitio
+\begin{equation}
+\psi_n=\frac{1}{\sqrt{N}}\sum_k\varphi_k e^{ikn},
+\end{equation}
+donde $N$ es tal que $\sum_k e^{ikn}=N\delta_{N,0}$ (efectivamente $N$ resulta ser el número de sitios pensando en que todavía no hemos efectuado $N\rightarrow \infty$). Entonces, el hamiltoniano resulta
+\begin{equation}
+\mathcal{H}=\sum_k \varphi_k^{\dag}\left(\sin(k)\gamma^0\gamma^1+m\gamma^0-\mu \right)\varphi_k=\sum_k \varphi_k^{\dag}M(k)\varphi_k.
+\end{equation}
+Utilizando propiedades generales de las matrices gamma puede probarse que $\text{Tr}(M)=-2\mu$ y $\text{Det}(M)=-(m^2+\sin(k)^2-\mu^2)$, y los autovalores de $M(k)$ resultan
+\begin{equation}
+0=E_k^2-\text{Tr}(M)E_k+\text{Det}(M)\:\:\:\Leftrightarrow\:\:\: E_k=-\mu\pm \sqrt{m^2+\sin(k)^2}.
+\end{equation}
+Para calcular los autoespinores adoptaremos la representación dada por $\gamma^0=\sigma^1$ y $\gamma^1=i\sigma^2$ como se sugiere en \cite{Casini:2009sr}.
+Luego, si denotamos a $u$ y $v$ a los autoespinores asociados a $E_k^+$ y $E_k^-$ respectivamente:
+
+\begin{equation}
+E_k^+ \Leftrightarrow u=a\begin{pmatrix}
+m \\ \sin(k)+\sqrt{m^2+\sin(k)^2}
+\end{pmatrix}\:\:\:\: \text{y}  \:\:\:\: E_k^- \Leftrightarrow v=b \begin{pmatrix}
+m \\ \sin(k)-\sqrt{m^2+\sin(k)^2}
+\end{pmatrix}.
+\end{equation}
+Las constantes de normalización $a$ y $b$ son extremadamente importantes\footnote{Quisiera agradecer a Raimel A. Medina Ramos por la observación y por los distintos aportes en los cálculos de este sistema.} ya que es necesario construir una matriz $U(k)$ constituida por los autoespinores. Mas aun, $U$ debe ser unitaria para preservar las relaciones de anticonmutación canónicas. Entonces:
+\begin{equation}
+U(k)=\left(u\: v\right)\:\:\:\: \text{y}\:\:\:\:  U^{\dag}(k)U(k)=\mathbb{I}\:\:\:\: 
+ \text{implican}
+\end{equation}
+\begin{equation}
+\begin{split}
+a^2 & =\frac{1}{2\sqrt{m^2+\sin(k)^2}(\sqrt{m^2+\sin(k)^2}+\sin(k))}, \\ b^2 & =\frac{1}{2\sqrt{m^2+\sin(k)^2}(\sqrt{m^2+\sin(k)^2}-\sin(k))}.
+\end{split}
+\end{equation}
+Ahora, el producto externo de los autoespinores resulta\footnote{Para simplicar los cálculos, puede utilizarse la identidad $m^2=(\sqrt{m^2+\sin(k)^2}-\sin(k))(\sqrt{m^2+\sin(k)^2}+\sin(k))$.} (definimos el producto externo de dos vectores como de costumbre $(x^{\dag}y)_{ij}=x^{\dag}_iy_j$):
+\begin{equation}
+u^{\dag}u=\begin{pmatrix}
+\frac{1}{2}-\frac{\sin(k)}{2\sqrt{m^2+\sin(k)^2}} & \frac{m}{2\sqrt{m^2+\sin(k)^2}} \\ \frac{m}{2\sqrt{m^2+\sin(k)^2}} & \frac{1}{2}+\frac{\sin(k)}{2\sqrt{m^2+\sin(k)^2}}
+\end{pmatrix} = \frac{1}{2}\mathbb{I}+\frac{m\gamma^0}{2\sqrt{m^2+\sin(k)^2}}+\frac{\sin(k)\gamma^0\gamma^1}{2\sqrt{m^2+\sin(k)^2}}
+\end{equation}
+\begin{equation}
+v^{\dag}v=\begin{pmatrix}
+\frac{1}{2}+\frac{\sin(k)}{2\sqrt{m^2+\sin(k)^2}} & -\frac{m}{2\sqrt{m^2+\sin(k)^2}} \\ -\frac{m}{2\sqrt{m^2+\sin(k)^2}} & \frac{1}{2}-\frac{\sin(k)}{2\sqrt{m^2+\sin(k)^2}}
+\end{pmatrix} = \frac{1}{2}\mathbb{I}-\frac{m\gamma^0}{2\sqrt{m^2+\sin(k)^2}}-\frac{\sin(k)\gamma^0\gamma^1}{2\sqrt{m^2+\sin(k)^2}}
+\end{equation}
+Esperamos que estos resultados sean independientes de la representación utilizada, dado que los resultados físicos no puede depender de ello. Para computar el correlador, procedemos de forma similar a la sección (\ref{sec:EE_lattice_f}) dado que nuestra densidad hamiltoniana es de la forma $\mathcal{H}=\sum_{ij}H_{ij}c^{\dag}_ic_j$. La función de correlación de dos puntos va a depender de las autofunciones $\chi_k$ y de las autoenergías $E_k^{\pm}$ como:
+\begin{equation}
+C_{ij}\equiv \langle \psi^{\dag}_i \psi_j\rangle={\sum_k \chi^{\dag}_k(i)\chi_k(j)\frac{1}{1+e^{ E_k}}}\:\stackrel{T\rightarrow 0}{=}\:\sum_k \chi^{\dag}_k(i)\chi_k(j)\Theta(-E_k),
+\end{equation}
+donde $\Theta$ representa la función de Heaviside. Hasta el momento, hemos realizado dos cosas, primero realizamos una transformada de Fourier discreta y luego diagonalizamos $M(k)$. Además, en nuestro ejemplo, el producto entre autoespinores no devuelve un escalar, sino que por tratarse de un producto externo, retorna una matriz de $2\times 2$. Finalmente:
+\begin{equation}
+C_{ij}=\sum_k \frac{e^{ik(j-i)}}{N}\left(u^{\dag}(k)u(k)\Theta(-E_k^+(\mu))+v^{\dag}(k)v(k)\Theta(-E_k^-(\mu))\right)
+\end{equation}
+En el límite $N\rightarrow \infty$, la sumatoria se transforma en una integral $\sum_{k} \mapsto \int \frac{dk}{(\frac{2\pi}{N})}$ y el intervalo de integración se reacomoda $k \in (-\pi,\pi)$. Entonces, obtenemos la expresión para el correlador para $\mu$ arbitrario 
+\begin{equation}
+C_{ij}=\int_{-\pi}^{\pi} \frac{dk}{2\pi}  \left(u^{\dag}(k)u(k)\Theta(-E_k^+(\mu))+v^{\dag}(k)v(k)\Theta(-E_k^-(\mu))\right) e^{ik(j-i)}. 
+\label{eq:corr_mu}
+\end{equation}
+En el caso particular en el que $\mu=0$, $C_{ij}^0\equiv C_{ij}(\mu=0)$ coincide con la ecuación (201) de \cite{Casini:2009sr} a menos del signo de $m$\footnote{El signo de $m$ resulta irrelevante, ya que el valor que realmente importa es el de $m^2$.},
+\begin{equation}
+\begin{split}
+C_{ij}^0&=\int_{-\pi}^{\pi} \frac{dk}{2\pi} v^{\dag}(k)v(k)e^{ik(j-i)}\\
+&=\int_{-\pi}^{\pi} \frac{dk}{2\pi}\left(\frac{1}{2}\mathbb{I}-\frac{m\gamma^0}{2\sqrt{m^2+\sin(k)^2}}-\frac{\sin(k)\gamma^0\gamma^1}{2\sqrt{m^2+\sin(k)^2}} \right)e^{ik(j-i)}\\
+&=\frac{1}{2}\delta_{ij}+\int_{-\pi}^{\pi} \frac{dk}{4\pi}\frac{-m\gamma^0+\sin(k)\gamma^0\gamma^1}{\sqrt{m^2+\sin(k)^2}}e^{ik(i-j)}.
+\end{split}
+\label{eq:corr_mu_0}
+\end{equation}
+Un resultado interesante de (\ref{eq:corr_mu}) es que el correlador para $\mu=0$ (\ref{eq:corr_mu_0}) no se ve modificado al cambiar el potencial químico a menos que $\mu \geq m$. Por otro lado, si $\mu$ es tal que $\mu\geq \sqrt{m^2+1}$ resulta que $C_{ij}=\mathbb{I}\delta_{ij}$. Esto último es un efecto de la discretización del sistma puesto que se trabajó con un espaciado de $\epsilon=1$. Si se hubiese utilizado un $\epsilon$ genérico los nuevos resultados podrían obtenerse sencillamente mapeando: $k \mapsto k\epsilon$ y $\sin(\cdot)\mapsto \frac{\sin(\cdot)}{\epsilon}$. Luego, el efecto antes mencionado ocurriría sólo si $\mu \geq \sqrt{m^2+\frac{1}{\epsilon^2}}$, pero puesto que $\epsilon \rightarrow 0$ en el continuo, eso nunca podría cumplirse.\\
+
+A partir de la expresión (\ref{eq:corr_mu}) se realizó un programa con el fin de calcular la entropía de entrelazamiento $S(R)$ de una región $V(R)=\{i,j:\: 1\leq i,j \leq R \}$ en función de $R$. Debe notarse que para emplear numéricamente la fórmula (\ref{eq:EE_matC}), se deben calcular los autovalores de la matriz $C$ restringida a la región $V(R)$. Sin embargo, cada elemento $C_{ij}$ es además una matriz de $2 \times 2$ debido al carácter espinorial del campo de Dirac. Por este motivo a la red original $(i \alpha)$ (con $\alpha=1,2$) se le asoció una nueva red $I=(i \alpha)$ definida de forma tal que\footnote{Si los índices originales estaban restringidos a $i,j=1,\ldots,R$, en la nueva red estarán restringidos a $I,J=1, \ldots,2R$.}
+\begin{equation}
+I=2(i-1)+\alpha.
+\end{equation}
+Mientras que la relación inversa está dada por
+\begin{equation}
+i=1+\left \lfloor \frac{I-1}{2}\right \rfloor,\:\:\:\:\:\: \alpha\equiv I \: (mod\:2).
+\end{equation}
+Para optimizar el programa, las componentes de los correladores las renombramos
+\begin{equation}
+C_{(i1) (j1)} \equiv A_+(j-i)\;,\;C_{(i1) (j2)}=C_{(i2) (j1)} \equiv B(j-i)\;,\;C_{(i2) (j2)}\equiv A_-(j-i)\,,
+\end{equation}
+y en la nueva red resulta que 
+\begin{equation}
+C_{IJ}=
+\begin{cases}
+A_+(\frac{J-I}{2})\:\:\:\: \text{si I,J}\equiv 0 \:(mod\:2) \\
+A_-(\frac{J-I}{2})\:\:\:\: \text{si I,J}\equiv 1 \:(mod\:2) \\
+B(\frac{J-I+(-1)^I}{2}) \:\:\:\: \text{caso contario}
+\end{cases}.
+\end{equation}
+Pueden obtenerse expresiones un poco más trabajadas para $A_{\pm}$ y $B$ utilizando argumentos de paridad, resultando
+\begin{equation}
+\begin{split}
+A_\pm(x)&= \frac{1}{2} \delta_{x,0}+\frac{1+(-1)^{x}}{2\pi}\,\frac{\sin (\Lambda x)}{x} \pm i \int_\Lambda^\pi\,\frac{dk}{\pi}\,\frac{\sin(kx)\:\sin (k)}{2 \sqrt{m^2+\sin^2(k) }}\\ &\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\pm i(-1)^{x}\int_0^\Lambda\,\frac{dk}{\pi}\,\frac{\sin(kx)\: \sin (k)}{2 \sqrt{m^2+\sin^2(k) }} \\
+B(x) &= \int_\Lambda^\pi\,\frac{dk}{\pi}\,\frac{m\: \cos(kx)}{2 \sqrt{m^2+\sin^2(k) }}-(-1)^{x}\int_0^\Lambda\,\frac{dk}{\pi}\,\frac{m\: \cos(kx)}{2 \sqrt{m^2+\sin^2(k) }}\, ,
+\end{split}
+\end{equation}
+y siendo el parámetro $\Lambda=\arcsin(\sqrt{\mu^2-m^2})$. A partir del programa\footnote{Dada la periodicidad de la relación de dispersión, se debe dividir por dos al valor de la entropía de entrelazamiento para obtener el resultado correcto asociado al campo de Dirac en el continuo.} se pudieron obtener gráficos para la entropía de entrelazamiento como el de (\ref{fig:EE_1+1}). También para dicho ejemplo, se ajustó una dependencia funcional de la forma $a+b\log(\frac{R}{\epsilon})$ con $\epsilon=1$ y se obtuvo un valor de $b\approx 0.343$ que se aproxima a $1/3$, valor de la carga central del álgebra de Virasoro, que aparece como una constante universal acompañando al término logarítmico de la entropía en sistemas en 1+1 dimensiones para $mR \gg 1$\cite{Casini_2007}. 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\linewidth]{lattice_femion_11_m.png}
+    \caption{Simulación de la entropía de entrelazamiento para una región $R$ con $m=0.1$, $\mu=0.11$ y espaciado $\epsilon=1$. Se ajustó una dependencia de la forma $a+b\log(\frac{R}{\epsilon})$ con $\epsilon=1$ y se obtuvieron los valores: $a \approx 0.603$ y $b\approx 0.343$.}
+    \label{fig:EE_1+1}
+\end{figure}
+
+La próxima tarea a realizarse como continuación del trabajo consistirá en obtener curvas como las de (\ref{fig:EE_1+1}), pero en el continuo de la teoría. Este procedimiento no es tan sencillo computacionalmente dado que hay dos parámetros adimensionales a controlar para un espaciado $\epsilon=1$ constante y para un dado $R$: $\lambda_m=m R$ y $\lambda_{\mu}=\mu R$. A priori, se esperaría que: para $\lambda_i \ll 1$ la entropía sea proporcional a $\log(R)$ por comportarse como una CFT \cite{Casini:2009sr}; para $\mu > m$ y $\lambda_{\mu} \gg 1$ domine la superficie de Fermi y la entropía sea también proporcional a $\log(R)$\cite{Swingle:2014}. Por tanto, a partir de la simulación se podría observar cómo es la transición entre un comportamiento y el otro al variar los parámetros adimensionales.
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "template"
+%%% End:

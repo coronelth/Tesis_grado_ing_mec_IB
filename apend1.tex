@@ -1,0 +1,22 @@
+\chapter{Teorema de reflexi\'on de Schwarz}\label{app:schwarz}
+
+\chapterquote{Eppur si muove.}{Galileo Galilei. Tras abjurar en 1633.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+En relación con la demostración del teorema de Reeh-Schlieder probaremos que $g(u)\equiv 0\:\:\forall u\in \mathbb{C}$ si $g$ es holomorfa en el semiplano superior $\mathbb{H}$, continua a medida que $u$ se acerca al eje real por encima y nula en el segemento $I=(-\epsilon,\epsilon)$ del eje real. Por esa razón, invocamos al teorema de reflexión de Schwarz.\\
+
+\textbf{Teorema de reflexión de Schwarz}\footnote{En la literatura, se encuentra el denominado \textit{edge of the wedge theorem} que es una especie de generalización del Teorema de reflexión de Schwarz para varias variables.} Sea $A\subset \mathbb{C}$ un conjunto abierto con la propiedad de que $z\in A\Leftrightarrow\bar{z}\in A$. Sea $f$ definida en $\{z\in A:\text{Im}(z)\geq 0\}$ y continua en dicho conjunto, asi como holomorfa en $\{z\in A:\text{Im}(z)>0\}$. Supongamos que $z\in A\cap \mathbb{R}$ implica que $f(z)$ sea real. Entonces $f$ posee una extensión analítica $\tilde{f}:A\rightarrow\mathbb{C}$ tal que
+$$\tilde{f}(z)=\begin{cases}f(z)& \text{si } z\in A,\:\text{Im(z)}\geq 0 \\ \overline{f(\bar{z})}& \text{si } z\in A,\:\text{Im(z)}< 0\end{cases}.$$  
+\\
+ 
+Definiendo $A:=\{z\in \mathbb{C}: \text{ si }z\in \mathbb{R}\Rightarrow z\not \in(-\infty,-\epsilon]\cup[\epsilon,\infty)\}$ puede verse que $A$ es un conjunto abierto. Luego, como $g$ es holomorfa en el semiplano superior, continua a medida que u$u$ se acerca al eje real por encima y real en $I=(-\epsilon,\epsilon)$ (porque $g(z)=0$ si $z\in I$), debido al teorema de reflexión de Schwarz concluimos que existe una extensión holomorfa $\tilde{g}$ en $A$. En otras palabras, $\tilde{g}$ resulta holomorfa en el semiplano superior/inferior así como en I (en donde $\tilde{g}$ se anula). Ahora, debemos hacer uso de la holomorfía de $\tilde{g}$ y de su nulidad en $I$. Por ese motivo, utilizaremos el hecho de que las funciones holomorfas definidas en un domino (es decir, en un conjunto abierto y conexo) tienen una propiedad interesante en relación con sus ceros:\\
+
+\textbf{Proposición}\footnote{Me gustaría agradecer a Javier Fernández por indicarme que esta proposición era necesaria para la demostración.} Sea $B\subset \mathbb{C}$ un dominio (un conjunto abierto y conexo) y $f$ una función  compleja holomorfa en $B$. Si $z_0\in B$ es un punto de acumulación de ceros de $f$, entonces $f \equiv 0$ en $B$.\\
+
+Utilizando la proposición es evidente que $\tilde{g}$ debe anularse en $A$, porque cada $z\in I$ es un punto de acumulación de ceros en $\tilde{g}$. Finalmente, como sabemos que $g$ es continua a medida que $u$ se aproxima al eje real concluimos que $g(u)=0$ si $x\in \mathbb{R}$. $\square$
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "template"
+%%% End:
